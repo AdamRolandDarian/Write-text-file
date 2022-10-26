@@ -1,0 +1,22 @@
+import java.io.*;
+
+public class Scriere {
+	String buf = "Acesta este primul fisier text creat in java!";
+
+	public void scrie(String fisier) {
+		FileWriter f = null;
+		try {
+			f = new FileWriter(fisier);
+			f.write(buf);
+			f.close();
+		} catch (IOException e) {
+			System.out.println("Eroare la scriere");
+		}
+	}
+
+	public static void main(String argv[]) {
+
+		Scriere c = new Scriere();
+		c.scrie("fisier4.txt");
+	}
+}
